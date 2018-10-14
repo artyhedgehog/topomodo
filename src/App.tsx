@@ -2,8 +2,12 @@ import * as React from 'react';
 import './App.css';
 
 import logo from './logo.svg';
+import TodoApp from './TodoApp';
+import TodoModel from './TodoModel';
 
 class App extends React.Component {
+  private model = new TodoModel('react-todos');
+
   public render() {
     return (
       <div className="App">
@@ -11,11 +15,8 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <hr />
-        <strong>Like this!</strong>
+
+        <TodoApp model={ this.model }/>
       </div>
     );
   }
